@@ -25,17 +25,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
-using NUnit.Tests.Assemblies;
 using NUnit.Engine.Internal;
 using NUnit.Framework;
 using System.Reflection;
+using NUnit.Tests.Assemblies;
 
 namespace NUnit.Engine.Tests
 {
     public class NUnitPortableDriverTests
     {
         const string EMPTY_FILTER = "<filter />";
-        const string MOCK_ASSEMBLY = "mock-assembly.exe";
+        const string MOCK_ASSEMBLY = "mock-assembly.dll";
         const string MISSING_FILE = "junk.dll";
         const string NUNIT_FRAMEWORK = "nunit.framework.dll";
         const string LOAD_MESSAGE = "Method called without calling Load first";
