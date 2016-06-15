@@ -160,7 +160,7 @@ Task("Package")
     .IsDependentOn("CreateImage")
     .Does(() =>
     {
-        var currentImageDir = IMAGE_DIR + "NUnit-" + packageVersion + "/";
+        var currentImageDir = IMAGE_DIR + "nunit.portable.agent-" + packageVersion + "/";
 
         CreateDirectory(PACKAGE_DIR);
 
