@@ -130,6 +130,7 @@ namespace NUnit.Compatibility
     /// </summary>
     public static class MemberInfoExtensions
     {
+#if NETSTANDARD1_3
         /// <summary>
         /// Returns an array of custom attributes of the specified type applied to this member
         /// </summary>
@@ -148,6 +149,7 @@ namespace NUnit.Compatibility
         {
             return GetAttributesImpl<T>(info.GetCustomAttributes(inherit));
         }
+#endif
 
         /// <summary>
         /// Returns an array of custom attributes of the specified type applied to this assembly

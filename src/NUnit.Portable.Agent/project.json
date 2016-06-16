@@ -4,7 +4,7 @@
   "title": "NUnit Portable Agent",
   "description": "The NUnit Portable Agent provides an interface that allows test runners to load the NUnit Framework and run tests in an assembly without taking a dependency on a specific version of the framework.",
   "name": "NUnit.Portable.Agent",
-  "version": "3.3.0-*",
+  "version": "3.3.0",
 
   "packOptions": {
     "summary": "The NUnit Portable Agent allows test runners to run portable NUnit tests without relying on the NUnit.Engine",
@@ -32,23 +32,40 @@
     "warningsAsErrors": true
   },
 
-  "dependencies": {
-    "System.Globalization": "4.0.11-rc2-24027",
-    "System.IO.FileSystem": "4.0.1-rc2-24027",
-    "System.Linq": "4.1.0-rc2-24027",
-    "System.ObjectModel": "4.0.12-rc2-24027",
-    "System.Reflection": "4.1.0-rc2-24027",
-    "System.Reflection.Extensions": "4.0.1-rc2-24027",
-    "System.Reflection.TypeExtensions": "4.1.0-rc2-24027",
-    "System.Runtime": "4.1.0-rc2-24027",
-    "System.Runtime.Extensions": "4.1.0-rc2-24027",
-    "System.Runtime.Serialization.Primitives": "4.1.1-rc2-24027",
-    "System.Text.RegularExpressions": "4.0.12-rc2-24027",
-    "System.Threading": "4.0.11-rc2-24027",
-    "System.Xml.XDocument": "4.0.11-rc2-24027"
-  },
-
   "frameworks": {
-    "netstandard1.3": { }
+    "netstandard1.3": {
+      "dependencies": {
+        "System.Globalization": "4.0.11-rc2-24027",
+        "System.IO.FileSystem": "4.0.1-rc2-24027",
+        "System.Linq": "4.1.0-rc2-24027",
+        "System.ObjectModel": "4.0.12-rc2-24027",
+        "System.Reflection": "4.1.0-rc2-24027",
+        "System.Reflection.Extensions": "4.0.1-rc2-24027",
+        "System.Reflection.TypeExtensions": "4.1.0-rc2-24027",
+        "System.Runtime": "4.1.0-rc2-24027",
+        "System.Runtime.Extensions": "4.1.0-rc2-24027",
+        "System.Runtime.Serialization.Primitives": "4.1.1-rc2-24027",
+        "System.Text.RegularExpressions": "4.0.12-rc2-24027",
+        "System.Threading": "4.0.11-rc2-24027",
+        "System.Xml.XDocument": "4.0.11-rc2-24027"
+      }
+    },
+    "net451": {
+      "frameworkAssemblies": {
+        "System.Globalization": "",
+        "System.Linq": "",
+        "System.ObjectModel": "",
+        "System.Reflection": "",
+        "System.Reflection.Extensions": "",
+        "System.Runtime": "",
+        "System.Runtime.Extensions": "",
+        "System.Runtime.Serialization.Primitives": "",
+        "System.Text.RegularExpressions": "",
+        "System.Threading": "",
+        "System.Xml": "",
+        "System.Xml.Linq": "",
+        "System.Xml.XDocument": ""
+      }
+    }
   }
 }
