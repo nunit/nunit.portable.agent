@@ -1,6 +1,6 @@
 # NUnit.Portable.Agent #
 
-[![Build status](https://ci.appveyor.com/api/projects/status/unhanlr79vb8h9vw/branch/master?svg=true)](https://ci.appveyor.com/project/CharliePoole/nunit-portable-agent/branch/master) [![NuGet Version and Downloads count](https://buildstats.info/nuget/NUnit.Portable.Agent)](https://www.nuget.org/packages/NUnit.Portable.Agent) 
+[![Build status](https://ci.appveyor.com/api/projects/status/unhanlr79vb8h9vw/branch/master?svg=true)](https://ci.appveyor.com/project/CharliePoole/nunit-portable-agent/branch/master) [![NuGet Version and Downloads count](https://buildstats.info/nuget/NUnit.Portable.Agent?includePreReleases=true)](https://www.nuget.org/packages/NUnit.Portable.Agent)
 
 [![Follow NUnit](https://img.shields.io/twitter/follow/nunit.svg?style=social)](https://twitter.com/nunit)
 
