@@ -63,8 +63,8 @@ install:
   - dotnet restore
 
   # Build projects
-  - dotnet build -c $Configuration ./test/NUnit.Portable.Agent.Tests
+  - dotnet build -c $Configuration -f netcoreapp1.0 ./test/NUnit.Portable.Agent.Tests
 
 script:
   # Run tests
-  - dotnet run -c $Configuration -p ./test/NUnit.Portable.Agent.Tests
+  - dotnet run -c $Configuration -f netcoreapp1.0 -p ./test/NUnit.Portable.Agent.Tests
