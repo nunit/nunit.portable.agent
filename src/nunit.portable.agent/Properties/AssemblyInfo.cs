@@ -21,11 +21,10 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
-using System.Resources;
 using System.Reflection;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("nunit.driver")]
-[assembly: AssemblyDescription("Driver for running portable tests")]
+[assembly: AssemblyTitle("nunit.portable.agent")]
+[assembly: AssemblyDescription("Driver/Agent for running tests on many platforms")]

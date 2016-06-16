@@ -24,8 +24,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Linq;
-using NUnit.Engine.Internal;
 using NUnit.Framework;
 using System.Reflection;
 using NUnit.Tests.Assemblies;
@@ -35,9 +33,6 @@ namespace NUnit.Engine.Tests
     public class NUnitPortableDriverTests
     {
         const string EMPTY_FILTER = "<filter />";
-        const string MOCK_ASSEMBLY = "mock-assembly.dll";
-        const string MISSING_FILE = "junk.dll";
-        const string NUNIT_FRAMEWORK = "nunit.framework.dll";
         const string LOAD_MESSAGE = "Method called without calling Load first";
 
         IDictionary<string, object> _settings = new Dictionary<string, object>();
@@ -49,10 +44,8 @@ namespace NUnit.Engine.Tests
         [SetUp]
         public void CreateDriver()
         {
-            var mockAssemblyPath = System.IO.Path.Combine(TestContext.CurrentContext.TestDirectory, MOCK_ASSEMBLY);
-            _mockAssembly = Assembly.LoadFrom(mockAssemblyPath);
-            var frameworkAssemblyPath = System.IO.Path.Combine(TestContext.CurrentContext.TestDirectory, NUNIT_FRAMEWORK);
-            _frameworkAssembly = Assembly.LoadFrom(frameworkAssemblyPath);
+            _mockAssembly = typeof(MockAssembly).GetTypeInfo().Assembly;
+            _frameworkAssembly = typeof(Assert).GetTypeInfo().Assembly;
             _driver = new NUnitPortableDriver();
         }
 

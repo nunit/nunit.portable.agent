@@ -31,11 +31,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5D2AF6F5-BC1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CC0C8BE9-2524-4153-98DD-519F323B8B1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit.portable.agent", "src\nunit.portable.agent\nunit.portable.agent.csproj", "{0F18F7A5-87CA-41E0-ACB2-A13C68D6CC5B}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "nunit.portable.agent", "src\nunit.portable.agent\nunit.portable.agent.xproj", "{D1567C63-4A0D-4E18-A14E-79699B9BFFFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit.portable.agent.tests", "test\nunit.portable.agent.tests\nunit.portable.agent.tests.csproj", "{8CDC481D-DB17-4145-9963-9E895C29CBC5}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "mock-assembly", "test\mock-assembly\mock-assembly.xproj", "{8C53C716-3E54-4DFE-8CD9-F4099042FCFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mock-assembly-4.5", "test\mock-assembly\mock-assembly-4.5.csproj", "{C3264FF3-E2D7-48D7-93A7-CDC9A827AD9D}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "nunit.portable.agent.tests", "test\nunit.portable.agent.tests\nunit.portable.agent.tests.xproj", "{8CDC481D-DB17-4145-9963-9E895C29CBC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,18 +43,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0F18F7A5-87CA-41E0-ACB2-A13C68D6CC5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F18F7A5-87CA-41E0-ACB2-A13C68D6CC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F18F7A5-87CA-41E0-ACB2-A13C68D6CC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F18F7A5-87CA-41E0-ACB2-A13C68D6CC5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1567C63-4A0D-4E18-A14E-79699B9BFFFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1567C63-4A0D-4E18-A14E-79699B9BFFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1567C63-4A0D-4E18-A14E-79699B9BFFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1567C63-4A0D-4E18-A14E-79699B9BFFFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C53C716-3E54-4DFE-8CD9-F4099042FCFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C53C716-3E54-4DFE-8CD9-F4099042FCFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C53C716-3E54-4DFE-8CD9-F4099042FCFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C53C716-3E54-4DFE-8CD9-F4099042FCFA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8CDC481D-DB17-4145-9963-9E895C29CBC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8CDC481D-DB17-4145-9963-9E895C29CBC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CDC481D-DB17-4145-9963-9E895C29CBC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CDC481D-DB17-4145-9963-9E895C29CBC5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3264FF3-E2D7-48D7-93A7-CDC9A827AD9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3264FF3-E2D7-48D7-93A7-CDC9A827AD9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3264FF3-E2D7-48D7-93A7-CDC9A827AD9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3264FF3-E2D7-48D7-93A7-CDC9A827AD9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,9 +62,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A972031D-2F61-4183-AF75-99EE1A9F6B32} = {49D441DF-39FD-4F4D-AECA-86CF8EFE23AF}
 		{43A219A8-2995-4884-806F-FDB9CD25D403} = {A972031D-2F61-4183-AF75-99EE1A9F6B32}
-		{0F18F7A5-87CA-41E0-ACB2-A13C68D6CC5B} = {5D2AF6F5-BC1A-45E5-820B-BD01B3178056}
+		{D1567C63-4A0D-4E18-A14E-79699B9BFFFF} = {5D2AF6F5-BC1A-45E5-820B-BD01B3178056}
+		{8C53C716-3E54-4DFE-8CD9-F4099042FCFA} = {CC0C8BE9-2524-4153-98DD-519F323B8B1A}
 		{8CDC481D-DB17-4145-9963-9E895C29CBC5} = {CC0C8BE9-2524-4153-98DD-519F323B8B1A}
-		{C3264FF3-E2D7-48D7-93A7-CDC9A827AD9D} = {CC0C8BE9-2524-4153-98DD-519F323B8B1A}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = src\NUnitFramework\tests\nunitlite.tests-2.0.csproj

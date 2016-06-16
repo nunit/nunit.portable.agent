@@ -1,0 +1,32 @@
+{
+  "version": "3.3.0-*",
+  "buildOptions": {
+    "define": [
+      "PORTABLE"
+    ],
+    "compile": {
+      "include": "./**/*.cs",
+      "includeFiles": [
+        "../../src/CommonAssemblyInfo.cs"
+      ]
+    }
+  },
+  "frameworks": {
+    "netstandard1.5": {
+      "imports": [
+        "netstandard1.5",
+        "portable-net45+win8"
+      ]
+    }
+  },
+  "dependencies": {
+    "nunit.portable.agent": {
+      "target": "project"
+    },
+    "mock-assembly": {
+      "target": "project"
+    },
+    "NUnit": "3.2.1",
+    "System.IO.FileSystem": "4.0.1-rc2-24027"
+  }
+}

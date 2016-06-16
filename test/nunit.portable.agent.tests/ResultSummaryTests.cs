@@ -24,6 +24,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Xml.Linq;
 using NUnit.Framework;
 
@@ -42,8 +43,10 @@ namespace NUnit.Engine.Tests
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            string testResultsFile = Path.Combine(TestContext.CurrentContext.TestDirectory, "MockTestResult.xml");
-            using (var reader = new StreamReader(testResultsFile))
+            string testDirectory = typeof(ResultSummaryTests).GetTypeInfo().Assembly.Location;
+            string testResultsFile = Path.Combine(testDirectory, "MockTestResult.xml");
+            using (var stream = new FileStream(testResultsFile, FileMode.Open))
+            using (var reader = new StreamReader(stream))
                 _testResults = XDocument.Load(reader);
 
             _testRun = _testResults.Element("test-run");
