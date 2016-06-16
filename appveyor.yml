@@ -16,10 +16,12 @@ before_build:
 
 build_script:
   - cmd: dotnet build -c Release test/NUnit.Portable.Agent.Tests
-  - cmd: dotnet run -c Release -p test/NUnit.Portable.Agent.Tests
-  - cmd: dotnet pack -c Release src/NUnit.Portable.Agent
 
-test: off
+test_script:
+  - cmd: dotnet run -c Release -p test/NUnit.Portable.Agent.Tests
+
+after_test:
+  - cmd: dotnet pack -c Release src/NUnit.Portable.Agent
 
 artifacts:
   path: 'src\NUnit.Portable.Agent\bin\Release\*.nupkg'
