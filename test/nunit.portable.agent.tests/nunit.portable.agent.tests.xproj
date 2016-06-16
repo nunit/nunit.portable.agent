@@ -8,10 +8,9 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>8CDC481D-DB17-4145-9963-9E895C29CBC5</ProjectGuid>
     <RootNamespace>NUnit.Engine.Tests</RootNamespace>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\sln</SolutionDir>
-    <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">$(SolutionDir)\obj</BaseIntermediateOutputPath>
-    <OutputPath Condition="'$(OutputPath)'=='' ">$(SolutionDir)\bin\</OutputPath>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
+    <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
@@ -19,7 +18,7 @@
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.targets" Condition="'$(VSToolsPath)' != ''" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties __JSONSchema="http://json.schemastore.org/jscsrc" />
+      <UserProperties __JSONSchema="http://json.schemastore.org/project-1.0.0-rc2" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

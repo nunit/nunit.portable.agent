@@ -42,11 +42,7 @@ namespace NUnit.Engine
         /// <returns>The path.</returns>
         public static string GetAssemblyPath(Type type)
         {
-#if PORTABLE
             return GetAssemblyPath(type.GetTypeInfo().Assembly);
-#else
-            return GetAssemblyPath(type.Assembly);
-#endif
         }
 
         /// <summary>
@@ -58,23 +54,13 @@ namespace NUnit.Engine
         /// <returns>The path.</returns>
         public static string GetAssemblyPath(Assembly assembly)
         {
-#if PORTABLE
             return assembly.ManifestModule.FullyQualifiedName;
-#else
-            string codeBase = assembly.CodeBase;
-
-            if (IsFileUri(codeBase))
-                return GetAssemblyPathFromCodeBase(codeBase);
-
-            return assembly.Location;
-#endif
         }
 
-#endregion
+        #endregion
 
-#region GetDirectoryName
+        #region GetDirectoryName
 
-#if !PORTABLE
         /// <summary>
         /// Gets the path to the directory from which an assembly was loaded.
         /// </summary>
@@ -84,11 +70,9 @@ namespace NUnit.Engine
         {
             return Path.GetDirectoryName(GetAssemblyPath(assembly));
         }
-#endif
+        #endregion
 
-#endregion
-
-#region GetAssemblyName
+        #region GetAssemblyName
 
         /// <summary>
         /// Gets the AssemblyName of an assembly.
@@ -97,18 +81,14 @@ namespace NUnit.Engine
         /// <returns>An AssemblyName</returns>
         public static AssemblyName GetAssemblyName(Assembly assembly)
         {
-#if PORTABLE
-            return new AssemblyName(assembly.FullName);
-#else
+            //return new AssemblyName(assembly.FullName);
             return assembly.GetName();
-#endif
         }
 
         #endregion
 
         #region Load
 
-#if PORTABLE
         /// <summary>
         /// Loads an assembly given a string, which is the AssemblyName
         /// </summary>
@@ -122,67 +102,7 @@ namespace NUnit.Engine
 
             return Assembly.Load(new AssemblyName { Name = name });
         }
-#else
-
-        /// <summary>
-        /// Loads an assembly given a string, which may be the 
-        /// path to the assembly or the AssemblyName
-        /// </summary>
-        /// <param name="nameOrPath"></param>
-        /// <returns></returns>
-        public static Assembly Load(string nameOrPath)
-        {
-            var ext = Path.GetExtension(nameOrPath).ToLower();
-
-            // Handle case where this is the path to an assembly
-            if (ext == ".dll" || ext == ".exe")
-            {
-                return Assembly.Load(AssemblyName.GetAssemblyName(nameOrPath));
-            }
-
-            // Assume it's the string representation of an AssemblyName
-            return Assembly.Load(nameOrPath);
-        }
-#endif
 
         #endregion
-
-#region Helper Methods
-
-#if !PORTABLE
-        private static bool IsFileUri(string uri)
-        {
-            return uri.ToLower().StartsWith(Uri.UriSchemeFile);
-        }
-
-        /// <summary>
-        /// Gets the assembly path from code base.
-        /// </summary>
-        /// <remarks>Public for testing purposes</remarks>
-        /// <param name="codeBase">The code base.</param>
-        /// <returns></returns>
-        public static string GetAssemblyPathFromCodeBase(string codeBase)
-        {
-            // Skip over the file:// part
-            int start = Uri.UriSchemeFile.Length + Uri.SchemeDelimiter.Length;
-
-            if (codeBase[start] == '/') // third slash means a local path
-            {
-                // Handle Windows Drive specifications
-                if (codeBase[start + 2] == ':')
-                    ++start;
-                // else leave the last slash so path is absolute
-            }
-            else // It's either a Windows Drive spec or a share
-            {
-                if (codeBase[start + 1] != ':')
-                    start -= 2; // Back up to include two slashes
-            }
-
-            return codeBase.Substring(start);
-        }
-#endif
-
-#endregion
     }
 }

@@ -1,5 +1,5 @@
 ﻿// ***********************************************************************
-// Copyright (c) 2015 Charlie Poole
+// Copyright (c) 2016 Charlie Poole
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the
@@ -22,26 +22,19 @@
 // ***********************************************************************
 
 using System;
-using System.Runtime.Serialization;
+using System.Reflection;
+using NUnit.Common;
+using NUnitLite;
 
-namespace NUnit.Engine
+namespace NUnit.Engine.Tests
 {
-    /// <summary>
-    /// TestSelectionParserException is thrown when an error
-    /// is found while parsing the selection expression.
-    /// </summary>
-    public class TestSelectionParserException : Exception
+    public class Program
     {
-        /// <summary>
-        /// Construct with a message
-        /// </summary>
-        public TestSelectionParserException(string message) : base(message) { }
-
-        /// <summary>
-        /// Construct with a message and inner exception
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="innerException"></param>
-        public TestSelectionParserException(string message, Exception innerException) : base(message, innerException) { }
+        public static int Main(string[] args)
+        {
+            var result = new AutoRun(typeof(Program).GetTypeInfo().Assembly)
+                    .Execute(args, new ExtendedTextWrapper(Console.Out), Console.In);
+            return result;
+        }
     }
 }

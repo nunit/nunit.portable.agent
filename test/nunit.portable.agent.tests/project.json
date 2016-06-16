@@ -1,18 +1,21 @@
 {
   "version": "3.3.0-*",
   "buildOptions": {
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true,
+    "warningsAsErrors": true,
     "define": [
-      "PORTABLE"
     ],
     "compile": {
       "include": "./**/*.cs",
       "includeFiles": [
         "../../src/CommonAssemblyInfo.cs"
       ]
-    }
+    },
+    "copyToOutput": "MockTestResult.xml"
   },
   "frameworks": {
-    "netstandard1.5": {
+    "netcoreapp1.0": {
       "imports": [
         "netstandard1.5",
         "portable-net45+win8"
@@ -20,13 +23,18 @@
     }
   },
   "dependencies": {
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0-rc2-3002702"
+    },
     "nunit.portable.agent": {
       "target": "project"
     },
     "mock-assembly": {
       "target": "project"
     },
-    "NUnit": "3.2.1",
-    "System.IO.FileSystem": "4.0.1-rc2-24027"
+    "NUnitLite": "3.2.1",
+    "System.IO.FileSystem": "4.0.1-rc2-24027",
+    "System.Console": "4.0.0-rc3-24206-00"
   }
 }
