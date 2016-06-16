@@ -36,43 +36,22 @@ using System.Reflection;
 #endif
 
 #if DEBUG
-#if NET_4_5
-[assembly: AssemblyConfiguration(".NET 4.5 Debug")]
-#elif NET_4_0
-[assembly: AssemblyConfiguration(".NET 4.0 Debug")]
-#elif NET_2_0
-[assembly: AssemblyConfiguration(".NET 2.0 Debug")]
-#elif SL_5_0
-[assembly: AssemblyConfiguration("Silverlight 5.0 Debug")]
-#elif SL_4_0
-[assembly: AssemblyConfiguration("Silverlight 4.0 Debug")]
-#elif SL_3_0
-[assembly: AssemblyConfiguration("Silverlight 3.0 Debug")]
-#elif NETCF_3_5
-[assembly: AssemblyConfiguration("Compact Framework 3.5 Debug")]
+#if NETSTANDARD1_3
+[assembly: AssemblyConfiguration("Net Standard 1.3 Debug")]
 #elif PORTABLE
 [assembly: AssemblyConfiguration("Portable Debug")]
 #else
 [assembly: AssemblyConfiguration("Debug")]
 #endif
 #else
-#if NET_4_5
-[assembly: AssemblyConfiguration(".NET 4.5")]
-#elif NET_4_0
-[assembly: AssemblyConfiguration(".NET 4.0")]
-#elif NET_2_0
-[assembly: AssemblyConfiguration(".NET 2.0")]
-#elif SL_5_0
-[assembly: AssemblyConfiguration("Silverlight 5.0")]
-#elif SL_4_0
-[assembly: AssemblyConfiguration("Silverlight 4.0")]
-#elif SL_3_0
-[assembly: AssemblyConfiguration("Silverlight 3.0")]
-#elif NETCF_3_5
-[assembly: AssemblyConfiguration("Compact Framework 3.5")]
+#if NETSTANDARD1_3
+[assembly: AssemblyConfiguration("Net Standard 1.3")]
 #elif PORTABLE
 [assembly: AssemblyConfiguration("Portable")]
 #else
 [assembly: AssemblyConfiguration("")]
 #endif
 #endif
+
+[assembly: AssemblyVersion("3.3.0.0")]
+[assembly: AssemblyFileVersion("3.3.0.0")]

@@ -21,6 +21,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
+#if !PORTABLE
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -384,3 +385,4 @@ namespace NUnit.Common
 #endregion
     }
 }
+#endif
