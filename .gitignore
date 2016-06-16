@@ -16,6 +16,8 @@ build/
 [Oo]bj/
 .vs/
 tools/Cake
+tools/NUnit.Console.Runner
+*.lock.json
 
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
 !packages/*/build/

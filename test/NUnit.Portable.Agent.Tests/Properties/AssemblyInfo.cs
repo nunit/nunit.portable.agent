@@ -1,5 +1,5 @@
-// ***********************************************************************
-// Copyright (c) 2014 Charlie Poole
+﻿// ***********************************************************************
+// Copyright (c) 2016 Charlie Poole
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the
@@ -23,35 +23,8 @@
 
 using System.Reflection;
 
-//
-// Common Information for the NUnit assemblies
-//
-[assembly: AssemblyCompany("NUnit Software")]
-[assembly: AssemblyProduct("NUnit 3.0")]
-[assembly: AssemblyCopyright("Copyright (C) 2016 Charlie Poole")]
-[assembly: AssemblyTrademark("NUnit is a trademark of NUnit Software")]
-
-#if PORTABLE
-[assembly: AssemblyMetadata("PCL", "True")]
-#endif
-
-#if DEBUG
-#if NETSTANDARD1_3
-[assembly: AssemblyConfiguration("Net Standard 1.3 Debug")]
-#elif PORTABLE
-[assembly: AssemblyConfiguration("Portable Debug")]
-#else
-[assembly: AssemblyConfiguration("Debug")]
-#endif
-#else
-#if NETSTANDARD1_3
-[assembly: AssemblyConfiguration("Net Standard 1.3")]
-#elif PORTABLE
-[assembly: AssemblyConfiguration("Portable")]
-#else
-[assembly: AssemblyConfiguration("")]
-#endif
-#endif
-
-[assembly: AssemblyVersion("3.3.0.0")]
-[assembly: AssemblyFileVersion("3.3.0.0")]
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("nunit.portable.agent.tests")]
+[assembly: AssemblyDescription("Tests for nunit.portable.agent")]
