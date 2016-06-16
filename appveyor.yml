@@ -15,9 +15,9 @@ before_build:
   - cmd: dotnet restore
 
 build_script:
-  - cmd: dotnet build -c Release test\NUnit.Portable.Agent.Tests\
-  - cmd: dotnet run -c Release -p test\NUnit.Portable.Agent.Tests\
-  - cmd: dotnet pack -c Release src\NUnit.Portable.Agent\
+  - cmd: dotnet build -c Release test/NUnit.Portable.Agent.Tests
+  - cmd: dotnet run -c Release -p test/NUnit.Portable.Agent.Tests
+  - cmd: dotnet pack -c Release src/NUnit.Portable.Agent
 
 test: off
 
