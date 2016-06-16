@@ -1,27 +1,25 @@
-branches:
-  except:
-    - /travis-.*/
+version: 3.3.0.{build}
+os: Visual Studio 2015
+configuration: Release
 
-install:
-  ps: |
-        Import-Module '.\appveyor-tool.ps1'
-        Bootstrap
-        
-build_script: 
-  - ps: .\build.ps1 -Target "Appveyor"
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
 
-# disable built-in tests.
+before_build:
+  - ps: .\scripts\show-dotnet-info.ps1
+  - ps: .\scripts\set-version.ps1
+  - cmd: dotnet --info
+  - cmd: dotnet restore
+
+build_script:
+  - cmd: dotnet build -c Release test\NUnit.Portable.Agent.Tests\
+  - cmd: dotnet run -c Release -p test\NUnit.Portable.Agent.Tests\
+  - cmd: dotnet pack -c Release src\NUnit.Portable.Agent\
+
 test: off
 
 artifacts:
-- path: package\*.nupkg
-#  - path: package\*.msi
-
-deploy:
-  - provider: NuGet
-    server: https://www.myget.org/F/nunit/api/v2
-    api_key:
-      secure: wtAvJDVl2tfwiVcyLExFHLvZVfUWiQRHsfdHBFCNEATeCHo1Nd8JP642PfY8xhji
-    skip_symbols: true
-    on:
-      branch: master
+  path: 'src\NUnit.Portable.Agent\bin\Release\*.nupkg'

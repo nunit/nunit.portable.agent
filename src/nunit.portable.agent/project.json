@@ -1,16 +1,35 @@
 {
+  "copyright": "Copyright (C) 2016 Charlie Poole",
+  "authors": [ "Rob Prouse" ],
+  "title": "NUnit Portable Agent",
+  "description": "The NUnit Portable Agent provides an interface that allows test runners to load the NUnit Framework and run tests in an assembly without taking a dependency on a specific version of the framework.",
+  "name": "NUnit.Portable.Agent",
   "version": "3.3.0-*",
+
+  "packOptions": {
+    "summary": "The NUnit Portable Agent allows test runners to run portable NUnit tests without relying on the NUnit.Engine",
+    "requireLicenseAcceptance": false,
+    "tags": [ "testing", "tdd", "dnx", "nunit" ],
+    "iconUrl": "https://raw.githubusercontent.com/nunit/dotnet-test-nunit/master/nunit_256.png",
+    "licenseUrl": "https://raw.githubusercontent.com/nunit/nunit.portable.agent/master/LICENSE",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/nunit/nunit.portable.agent"
+    }
+  },
 
   "buildOptions": {
     "define": [
     ],
     "compile": {
-        "include": "./**/*.cs",
-        "includeFiles": [
-            "../CommonAssemblyInfo.cs"
-        ]
+      "include": "./**/*.cs",
+      "includeFiles": [
+        "../CommonAssemblyInfo.cs"
+      ]
     },
-    "keyFile": "./nunit.snk"
+    "keyFile": "./nunit.snk",
+    "preserveCompilationContext": true,
+    "warningsAsErrors": true
   },
 
   "dependencies": {

@@ -18,7 +18,7 @@
         }
     },
     "dependencies": {
-        "nunit.portable.agent": {
+        "NUnit.Portable.Agent": {
             "target": "project"
         },
       "NUnit": "3.2.1",

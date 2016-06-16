@@ -2,19 +2,11 @@
 
 So you're thinking about contributing to NUnit? Great! Maintaining and enhancing NUnit is a big job, so **the community's help is really appreciated.**
 
-Helping out isn't just writing code, it also includes submitting issues, helping confirm issues, working on the website, helping people on the [mailing lists](https://groups.google.com/forum/m/#!forum/nunit-discuss) and improving the documentation. 
+Helping out isn't just writing code, it also includes submitting issues, helping confirm issues, working on the website, helping people on the [mailing lists](https://groups.google.com/forum/m/#!forum/nunit-discuss) and improving the documentation.
 
 ## Submitting Issues
 
 Requests for new features and bug reports keep the project moving forward.
-
-### Before you submit an issue
-
-- Ensure you are running the [latest version](https://github.com/nunit/nunit/releases) of NUnit.
-- **Many 3rd party test runners do not support NUnit 3 yet.** They may appear to run NUnit tests, but they do not do so correctly.
-- To ensure that the bug is in NUnit and not in the runner you are using, **test your bug using the nunit3-console.exe** first.
-- If you are using the **Portable Framework**, the console runner nor the Visual Studio adapter do not run portable tests yet. You need to create an **NUnitLite** self-executing test or use the [NUnit Xamarin Runners](https://github.com/nunit/nunit.xamarin).
-- **Search** the [issue list](https://github.com/nunit/nunit/issues?utf8=%E2%9C%93&q=is%3Aissue) (including closed issues) to make sure it hasn't already been reported.
 
 ### Submitting a good issue
 
@@ -39,9 +31,7 @@ Issues that need confirmation will have the **confirm** label or be unlabeled an
 
 Great documentation is essential for any open source project and NUnit is no exception. [Our documentation](https://github.com/nunit/nunit/wiki) often lags behind the features that have been implemented or would benefit from better examples.
 
-A great place to start is by going through the [NUnit release notes](https://github.com/nunit/nunit/wiki/Release-Notes) and ensuring that the documentation for new features is up to date.
-
-## Fixing Bugs and Adding Features 
+## Fixing Bugs and Adding Features
 
 We love pull requests, but would prefer that new contributors start with smaller issues and let us know before you contribute to prevent duplication of work.
 

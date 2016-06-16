@@ -27,7 +27,7 @@
       "type": "platform",
       "version": "1.0.0-rc2-3002702"
     },
-    "nunit.portable.agent": {
+    "NUnit.Portable.Agent": {
       "target": "project"
     },
     "mock-assembly": {

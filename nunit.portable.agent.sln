@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
-		build.cake = build.cake
-		BUILDING.md = BUILDING.md
 		CHANGES.txt = CHANGES.txt
 		CONTRIBUTING.md = CONTRIBUTING.md
 		global.json = global.json
@@ -18,13 +16,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		NOTICES.txt = NOTICES.txt
 		nunit.ico = nunit.ico
 		README.md = README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{A972031D-2F61-4183-AF75-99EE1A9F6B32}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "engine", "engine", "{43A219A8-2995-4884-806F-FDB9CD25D403}"
-	ProjectSection(SolutionItems) = preProject
-		nuget\engine\nunit.portable.agent.nuspec = nuget\engine\nunit.portable.agent.nuspec
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5D2AF6F5-BC1A-45E5-820B-BD01B3178056}"
@@ -60,8 +51,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{A972031D-2F61-4183-AF75-99EE1A9F6B32} = {49D441DF-39FD-4F4D-AECA-86CF8EFE23AF}
-		{43A219A8-2995-4884-806F-FDB9CD25D403} = {A972031D-2F61-4183-AF75-99EE1A9F6B32}
 		{D1567C63-4A0D-4E18-A14E-79699B9BFFFF} = {5D2AF6F5-BC1A-45E5-820B-BD01B3178056}
 		{8C53C716-3E54-4DFE-8CD9-F4099042FCFA} = {CC0C8BE9-2524-4153-98DD-519F323B8B1A}
 		{8CDC481D-DB17-4145-9963-9E895C29CBC5} = {CC0C8BE9-2524-4153-98DD-519F323B8B1A}
