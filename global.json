@@ -1,9 +1,5 @@
 {
-  "projects": [
-    "src/nunit.portable.agent",
-    "test/mock-assembly",
-    "src"
-  ],
+  "projects": [ "src", "test" ],
   "sdk": {
     "version": "1.0.0-preview1-002702"
   }
