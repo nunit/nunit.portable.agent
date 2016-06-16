@@ -66,7 +66,7 @@ namespace NUnit.Tests
 
             public const int TestStartedEvents = Tests - IgnoredFixture.Tests - BadFixture.Tests - ExplicitFixture.Tests;
             public const int TestFinishedEvents = Tests;
-#if PORTABLE || SILVERLIGHT
+#if PORTABLE
             public const int TestOutputEvents = 0;
 #else
             public const int TestOutputEvents = 1;
@@ -124,7 +124,7 @@ namespace NUnit.Tests
             [Test]
             public void FailingTest()
             {
-#if !PORTABLE && !SILVERLIGHT
+#if !PORTABLE
                 Console.Error.WriteLine("Immediate Error Message");
 #endif
                 Assert.Fail("Intentional failure");

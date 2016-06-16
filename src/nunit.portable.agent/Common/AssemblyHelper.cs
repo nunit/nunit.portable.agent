@@ -25,13 +25,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-#if NUNIT_ENGINE
-namespace NUnit.Engine.Internal
-#elif NUNIT_FRAMEWORK
-namespace NUnit.Framework.Internal
-#else
-namespace NUnit.Common
-#endif
+namespace NUnit.Engine
 {
     /// <summary>
     /// AssemblyHelper provides static methods for working
@@ -64,9 +58,7 @@ namespace NUnit.Common
         /// <returns>The path.</returns>
         public static string GetAssemblyPath(Assembly assembly)
         {
-#if SILVERLIGHT
-            return GetAssemblyName(assembly).Name;
-#elif NETCF || PORTABLE
+#if PORTABLE
             return assembly.ManifestModule.FullyQualifiedName;
 #else
             string codeBase = assembly.CodeBase;
@@ -82,7 +74,7 @@ namespace NUnit.Common
 
 #region GetDirectoryName
 
-#if !SILVERLIGHT && !PORTABLE
+#if !PORTABLE
         /// <summary>
         /// Gets the path to the directory from which an assembly was loaded.
         /// </summary>
@@ -105,7 +97,7 @@ namespace NUnit.Common
         /// <returns>An AssemblyName</returns>
         public static AssemblyName GetAssemblyName(Assembly assembly)
         {
-#if SILVERLIGHT || PORTABLE
+#if PORTABLE
             return new AssemblyName(assembly.FullName);
 #else
             return assembly.GetName();
@@ -145,13 +137,7 @@ namespace NUnit.Common
             // Handle case where this is the path to an assembly
             if (ext == ".dll" || ext == ".exe")
             {
-#if SILVERLIGHT
-                return Assembly.Load(Path.GetFileNameWithoutExtension(nameOrPath));
-#elif NETCF
-                return Assembly.LoadFrom(nameOrPath);
-#else
                 return Assembly.Load(AssemblyName.GetAssemblyName(nameOrPath));
-#endif
             }
 
             // Assume it's the string representation of an AssemblyName
@@ -163,7 +149,7 @@ namespace NUnit.Common
 
 #region Helper Methods
 
-#if !NETCF && !SILVERLIGHT && !PORTABLE
+#if !PORTABLE
         private static bool IsFileUri(string uri)
         {
             return uri.ToLower().StartsWith(Uri.UriSchemeFile);

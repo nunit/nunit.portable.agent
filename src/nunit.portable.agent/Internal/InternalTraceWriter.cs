@@ -22,13 +22,7 @@
 // ***********************************************************************
 using System.IO;
 
-#if NUNIT_ENGINE
 namespace NUnit.Engine.Internal
-#elif NUNIT_FRAMEWORK
-namespace NUnit.Framework.Internal
-#else
-namespace NUnit.Common
-#endif
 {
     /// <summary>
     /// A trace listener that writes to a separate file per domain

@@ -28,7 +28,7 @@ using System.Linq;
 
 namespace NUnit.Compatibility
 {
-#if !NET_4_5 && !PORTABLE
+#if !PORTABLE
     /// <summary>
     /// Provides NUnit specific extensions to aid in Reflection
     /// across multiple frameworks

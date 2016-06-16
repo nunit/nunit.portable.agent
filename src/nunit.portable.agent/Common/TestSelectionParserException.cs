@@ -24,11 +24,7 @@
 using System;
 using System.Runtime.Serialization;
 
-#if NUNIT_ENGINE
 namespace NUnit.Engine
-#else
-namespace NUnit.Common
-#endif
 {
     /// <summary>
     /// TestSelectionParserException is thrown when an error 
@@ -51,7 +47,7 @@ namespace NUnit.Common
         /// <param name="innerException"></param>
         public TestSelectionParserException(string message, Exception innerException) : base(message, innerException) { }
 
-#if !NETCF && !SILVERLIGHT && !PORTABLE
+#if !PORTABLE
         /// <summary>
         /// Serialization constructor
         /// </summary>

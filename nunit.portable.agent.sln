@@ -22,20 +22,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{A972031D-2F61-4183-AF75-99EE1A9F6B32}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NUnitEngine", "NUnitEngine", "{31B45C4C-206F-4F31-9CC6-33BF11DFEE39}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portable", "Portable", "{32405F86-07E7-41A7-94EB-2AD6B290ED07}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit.portable.agent", "src\NUnitEngine\Portable\nunit.portable.agent\nunit.portable.agent.csproj", "{0F18F7A5-87CA-41E0-ACB2-A13C68D6CC5B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit.portable.agent.tests", "src\NUnitEngine\Portable\nunit.portable.agent.tests\nunit.portable.agent.tests.csproj", "{8CDC481D-DB17-4145-9963-9E895C29CBC5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "engine", "engine", "{43A219A8-2995-4884-806F-FDB9CD25D403}"
 	ProjectSection(SolutionItems) = preProject
 		nuget\engine\nunit.portable.agent.nuspec = nuget\engine\nunit.portable.agent.nuspec
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mock-assembly-4.5", "src\NUnitFramework\mock-assembly\mock-assembly-4.5.csproj", "{C3264FF3-E2D7-48D7-93A7-CDC9A827AD9D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5D2AF6F5-BC1A-45E5-820B-BD01B3178056}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CC0C8BE9-2524-4153-98DD-519F323B8B1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit.portable.agent", "src\nunit.portable.agent\nunit.portable.agent.csproj", "{0F18F7A5-87CA-41E0-ACB2-A13C68D6CC5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit.portable.agent.tests", "test\nunit.portable.agent.tests\nunit.portable.agent.tests.csproj", "{8CDC481D-DB17-4145-9963-9E895C29CBC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mock-assembly-4.5", "test\mock-assembly\mock-assembly-4.5.csproj", "{C3264FF3-E2D7-48D7-93A7-CDC9A827AD9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,11 +61,10 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A972031D-2F61-4183-AF75-99EE1A9F6B32} = {49D441DF-39FD-4F4D-AECA-86CF8EFE23AF}
-		{32405F86-07E7-41A7-94EB-2AD6B290ED07} = {31B45C4C-206F-4F31-9CC6-33BF11DFEE39}
-		{0F18F7A5-87CA-41E0-ACB2-A13C68D6CC5B} = {32405F86-07E7-41A7-94EB-2AD6B290ED07}
-		{8CDC481D-DB17-4145-9963-9E895C29CBC5} = {32405F86-07E7-41A7-94EB-2AD6B290ED07}
 		{43A219A8-2995-4884-806F-FDB9CD25D403} = {A972031D-2F61-4183-AF75-99EE1A9F6B32}
-		{C3264FF3-E2D7-48D7-93A7-CDC9A827AD9D} = {32405F86-07E7-41A7-94EB-2AD6B290ED07}
+		{0F18F7A5-87CA-41E0-ACB2-A13C68D6CC5B} = {5D2AF6F5-BC1A-45E5-820B-BD01B3178056}
+		{8CDC481D-DB17-4145-9963-9E895C29CBC5} = {CC0C8BE9-2524-4153-98DD-519F323B8B1A}
+		{C3264FF3-E2D7-48D7-93A7-CDC9A827AD9D} = {CC0C8BE9-2524-4153-98DD-519F323B8B1A}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = src\NUnitFramework\tests\nunitlite.tests-2.0.csproj

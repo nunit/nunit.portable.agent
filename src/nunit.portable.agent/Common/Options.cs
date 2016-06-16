@@ -154,17 +154,7 @@ using System.Security.Permissions;
 using System.Linq;
 #endif
 
-#if TEST
-using NDesk.Options;
-#endif
-
-#if NUNIT_CONSOLE || NUNITLITE || NUNIT_ENGINE
 namespace NUnit.Options
-#elif NDESK_OPTIONS
-namespace NDesk.Options
-#else
-namespace Mono.Options
-#endif
 {
     public class OptionValueCollection : IList, IList<string> {
 
@@ -375,13 +365,13 @@ namespace Mono.Options
             Type targetType = nullable ? tt.GetGenericArguments () [0] : typeof (T);
 #endif
 
-#if !NETCF && !SILVERLIGHT && !PORTABLE
+#if !PORTABLE
             TypeConverter conv = TypeDescriptor.GetConverter (targetType);
 #endif
             T t = default (T);
             try {
                 if (value != null)
-#if NETCF || SILVERLIGHT || PORTABLE
+#if PORTABLE
                     t = (T)Convert.ChangeType(value, tt, CultureInfo.InvariantCulture);
 #else
                     t = (T) conv.ConvertFromString (value);
@@ -514,7 +504,7 @@ namespace Mono.Options
             this.option = optionName;
         }
 
-#if !NETCF && !SILVERLIGHT && !PORTABLE
+#if !PORTABLE
         protected OptionException (SerializationInfo info, StreamingContext context)
             : base (info, context)
         {
@@ -526,7 +516,7 @@ namespace Mono.Options
             get {return this.option;}
         }
 
-#if !NETCF && !SILVERLIGHT && !PORTABLE
+#if !PORTABLE
         [SecurityPermission (SecurityAction.LinkDemand, SerializationFormatter = true)]
         public override void GetObjectData (SerializationInfo info, StreamingContext context)
         {

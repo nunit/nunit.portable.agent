@@ -24,13 +24,7 @@
 using System;
 using System.IO;
 
-#if NUNIT_ENGINE
 namespace NUnit.Engine.Internal
-#elif NUNIT_FRAMEWORK
-namespace NUnit.Framework.Internal
-#else
-namespace NUnit.Common
-#endif
 {
     /// <summary>
     /// InternalTrace provides facilities for tracing the execution

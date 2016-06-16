@@ -246,7 +246,7 @@ namespace NUnit.Common
         {
             if (path == null) return null;
 
-#if NETCF || PORTABLE
+#if PORTABLE
             return Path.Combine(NUnit.Env.DocumentFolder, path);
 #else
             return Path.GetFullPath(path);
@@ -347,11 +347,6 @@ namespace NUnit.Common
 #if !PORTABLE
             this.Add("trace=", "Set internal trace {LEVEL}.\nValues: Off, Error, Warning, Info, Verbose (Debug)",
                 v => InternalTraceLevel = RequiredValue(v, "--trace", "Off", "Error", "Warning", "Info", "Verbose", "Debug"));
-
-#if !NETCF
-            this.Add("teamcity", "Turns on use of TeamCity service messages.",
-                v => TeamCity = v != null);
-#endif
 
             this.Add("noheader|noh", "Suppress display of program information at start of run.",
                 v => NoHeader = v != null);
