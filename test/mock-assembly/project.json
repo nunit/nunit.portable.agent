@@ -22,6 +22,6 @@
             "target": "project"
         },
       "NUnit": "3.2.1",
-      "System.Console": "4.0.0-rc3-24206-00"
+      "System.Console": "4.0.0-rc2-24027"
     }
 }
