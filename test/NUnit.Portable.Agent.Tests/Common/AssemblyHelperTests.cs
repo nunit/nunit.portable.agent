@@ -31,7 +31,11 @@ namespace NUnit.Engine.Tests
     [TestFixture]
     public class AssemblyHelperTests
     {
+#if NET451
+        private static readonly string THIS_ASSEMBLY_PATH = "NUnit.Portable.Agent.Tests.exe";
+#else
         private static readonly string THIS_ASSEMBLY_PATH = "NUnit.Portable.Agent.Tests.dll";
+#endif
         private static readonly string THIS_ASSEMBLY_NAME = "NUnit.Portable.Agent.Tests";
 
         public void GetNameForAssembly()
