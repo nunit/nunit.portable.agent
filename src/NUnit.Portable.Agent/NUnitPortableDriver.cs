@@ -24,7 +24,6 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using NUnit.Compatibility;
 using NUnit.Engine.Internal;
 using System.Reflection;
 
