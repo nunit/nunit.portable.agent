@@ -23,7 +23,7 @@
 using System;
 using System.Reflection;
 
-namespace NUnit.Compatibility
+namespace NUnit.Engine
 {
     /// <summary>
     /// Provides a platform-independent methods for getting attributes
