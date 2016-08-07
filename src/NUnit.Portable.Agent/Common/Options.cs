@@ -144,7 +144,7 @@ using System.Text.RegularExpressions;
 // Missing XML Docs
 #pragma warning disable 1591
 
-using NUnit.Compatibility;
+using NUnit.Engine;
 using System.Linq;
 
 namespace NUnit.Options

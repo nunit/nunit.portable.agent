@@ -26,7 +26,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
 
-namespace NUnit.Compatibility
+namespace NUnit.Engine
 {
     /// <summary>
     /// Provides NUnit specific extensions to aid in Reflection

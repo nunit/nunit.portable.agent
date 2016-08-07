@@ -18,7 +18,8 @@
   "frameworks": {
     "netcoreapp1.0": {
       "imports": [
-        "dotnet"
+        "netstandard1.3",
+        "portable-net45+win8"
       ],
       "dependencies": {
         "Microsoft.NETCore.App": {
@@ -29,7 +30,7 @@
         "System.Console": "4.0.0"
       }
     },
-    "net45": {}
+    "net451": {}
   },
 
   "dependencies": {
