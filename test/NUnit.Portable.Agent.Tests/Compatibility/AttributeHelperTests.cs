@@ -136,7 +136,9 @@ namespace NUnit.Engine.Tests.Compatibility
             public int MyProperty { get; set; }
 
             [Datapoint]
+#pragma warning disable 169
             public int field = 1;
+#pragma warning restore 169
         }
 
         class B : A

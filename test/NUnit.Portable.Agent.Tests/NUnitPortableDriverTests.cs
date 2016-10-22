@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using System.Reflection;
+using System.Xml.Linq;
 using NUnit.Tests.Assemblies;
 
 namespace NUnit.Engine.Tests
@@ -33,7 +34,7 @@ namespace NUnit.Engine.Tests
     public class NUnitPortableDriverTests
     {
         const string EMPTY_FILTER = "<filter />";
-        const string LOAD_MESSAGE = "Method called without calling Load first";
+        const string LOAD_MESSAGE = "Method called without loading any assemblies";
 
         IDictionary<string, object> _settings = new Dictionary<string, object>();
 
@@ -48,14 +49,6 @@ namespace NUnit.Engine.Tests
             _frameworkAssembly = typeof(Assert).GetTypeInfo().Assembly;
             _driver = new NUnitPortableDriver();
         }
-
-        #region Construction Test
-
-        public void ConstructController_MissingFile_ThrowsArgumentInvalid()
-        {
-            Assert.That(new NUnitPortableDriver(), Throws.ArgumentException);
-        }
-        #endregion
 
         #region Load
         [Test]
@@ -77,12 +70,14 @@ namespace NUnit.Engine.Tests
         {
             _driver.Load(_frameworkAssembly, _mockAssembly, _settings);
             var result = XmlHelper.CreateXElement(_driver.Explore(EMPTY_FILTER));
+            Assert.That(result.Name.LocalName, Is.EqualTo("test-run"));
 
-            Assert.That(result.Name.LocalName, Is.EqualTo("test-suite"));
-            Assert.That(result.GetAttribute("type"), Is.EqualTo("Assembly"));
-            Assert.That(result.GetAttribute("runstate"), Is.EqualTo("Runnable"));
-            Assert.That(result.GetAttribute("testcasecount"), Is.EqualTo(MockAssembly.Tests.ToString()));
-            Assert.That(result.Elements("test-suite").Count(), Is.GreaterThan(0), "Explore result should have child tests");
+            var testSuite = result.Element(XName.Get("test-suite"));
+            Assert.That(testSuite.Name.LocalName, Is.EqualTo("test-suite"));
+            Assert.That(testSuite.GetAttribute("type"), Is.EqualTo("Assembly"));
+            Assert.That(testSuite.GetAttribute("runstate"), Is.EqualTo("Runnable"));
+            Assert.That(testSuite.GetAttribute("testcasecount"), Is.EqualTo(MockAssembly.Tests.ToString()));
+            Assert.That(testSuite.Elements("test-suite").Count(), Is.GreaterThan(0), "Explore result should have child tests");
         }
 
         [Test]
@@ -121,17 +116,18 @@ namespace NUnit.Engine.Tests
         {
             _driver.Load(_frameworkAssembly, _mockAssembly, _settings);
             var result = XmlHelper.CreateXElement(_driver.Run(null, EMPTY_FILTER));
+            Assert.That(result.Name.LocalName, Is.EqualTo("test-run"));
 
-            Assert.That(result.Name.LocalName, Is.EqualTo("test-suite"));
-            Assert.That(result.GetAttribute("type"), Is.EqualTo("Assembly"));
-            Assert.That(result.GetAttribute("runstate"), Is.EqualTo("Runnable"));
-            Assert.That(result.GetAttribute("testcasecount"), Is.EqualTo(MockAssembly.Tests.ToString()));
-            Assert.That(result.GetAttribute("result"), Is.EqualTo("Failed"));
-            Assert.That(result.GetAttribute("passed"), Is.EqualTo(MockAssembly.Success.ToString()));
-            Assert.That(result.GetAttribute("failed"), Is.EqualTo(MockAssembly.ErrorsAndFailures.ToString()));
-            Assert.That(result.GetAttribute("skipped"), Is.EqualTo(MockAssembly.Skipped.ToString()));
-            Assert.That(result.GetAttribute("inconclusive"), Is.EqualTo(MockAssembly.Inconclusive.ToString()));
-            Assert.That(result.Elements("test-suite").Count(), Is.GreaterThan(0), "Explore result should have child tests");
+            var testSuite = result.Element(XName.Get("test-suite"));
+            Assert.That(testSuite.GetAttribute("type"), Is.EqualTo("Assembly"));
+            Assert.That(testSuite.GetAttribute("runstate"), Is.EqualTo("Runnable"));
+            Assert.That(testSuite.GetAttribute("testcasecount"), Is.EqualTo(MockAssembly.Tests.ToString()));
+            Assert.That(testSuite.GetAttribute("result"), Is.EqualTo("Failed"));
+            Assert.That(testSuite.GetAttribute("passed"), Is.EqualTo(MockAssembly.Success.ToString()));
+            Assert.That(testSuite.GetAttribute("failed"), Is.EqualTo(MockAssembly.ErrorsAndFailures.ToString()));
+            Assert.That(testSuite.GetAttribute("skipped"), Is.EqualTo(MockAssembly.Skipped.ToString()));
+            Assert.That(testSuite.GetAttribute("inconclusive"), Is.EqualTo(MockAssembly.Inconclusive.ToString()));
+            Assert.That(testSuite.Elements("test-suite").Count(), Is.GreaterThan(0), "Explore result should have child tests");
         }
 
         [Test]
@@ -142,20 +138,6 @@ namespace NUnit.Engine.Tests
                 ex = ex.InnerException;
             Assert.That(ex, Is.TypeOf<InvalidOperationException>());
             Assert.That(ex.Message, Is.EqualTo(LOAD_MESSAGE));
-        }
-        #endregion
-
-        #region Nested Callback Class
-        private class CallbackEventHandler
-        {
-            public Action<string> Action { get; private set; }
-
-            public CallbackEventHandler()
-            {
-                Action = s => Result = s;
-            }
-
-            public string Result { get; private set; }
         }
         #endregion
     }
