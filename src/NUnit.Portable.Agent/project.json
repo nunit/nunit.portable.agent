@@ -4,7 +4,7 @@
   "title": "NUnit Portable Agent",
   "description": "The NUnit Portable Agent provides an interface that allows test runners to load the NUnit Framework and run tests in an assembly without taking a dependency on a specific version of the framework.",
   "name": "NUnit.Portable.Agent",
-  "version": "3.4.0-beta-2",
+  "version": "3.4.0-beta-3",
 
   "packOptions": {
     "summary": "The NUnit Portable Agent allows test runners to run portable NUnit tests without relying on the NUnit.Engine",
