@@ -40,6 +40,5 @@
     "mock-assembly": {
       "target": "project"
     },
-    "NUnitLite": "3.4.0"
-  }
+    "NUnitLite": "3.5.0"  }
 }

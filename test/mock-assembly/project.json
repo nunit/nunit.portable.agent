@@ -27,6 +27,6 @@
     "NUnit.Portable.Agent": {
       "target": "project"
     },
-    "NUnit": "3.4.0"
+    "NUnit": "3.5.0"
   }
 }
