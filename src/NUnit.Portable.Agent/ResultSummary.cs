@@ -102,8 +102,14 @@ namespace NUnit.Engine
             test.Add(new XAttribute("duration", Duration.ToString("0.000000", NumberFormatInfo.InvariantInfo)));
 
             foreach (var result in _results)
-                test.Add(result);
-            
+            {
+                XElement firstSuite = result.Name.LocalName == "test-run"
+                    ? result.Element(XName.Get("test-suite"))
+                    : result;
+
+                if (firstSuite != null) test.Add(firstSuite);
+            }
+
             return new XDocument(test);
         }
 
