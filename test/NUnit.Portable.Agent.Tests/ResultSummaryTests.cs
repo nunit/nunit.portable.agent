@@ -119,5 +119,15 @@ namespace NUnit.Engine.Tests
             Assert.That(actualSkipped, Is.EqualTo(expectedSkipped));
             Assert.That(actualAsserts, Is.EqualTo(expectedAsserts));
         }
+
+        [Test]
+        public void MultipleTestRunsAreSummarizedCorrectly()
+        {
+            var summary = new ResultSummary();
+            summary.AddResult(_testRun);
+            summary.AddResult(_testRun);
+            var result = summary.GetTestResults();
+            Assert.That(result.Descendants(XName.Get("test-run")).ToList(), Has.Count.EqualTo(1));
+        }
     }
 }
