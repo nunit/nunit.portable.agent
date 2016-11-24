@@ -81,16 +81,13 @@ namespace NUnit.Engine
             var test = new XElement("test-run");
             test.Add(new XAttribute("id", "0"));
             test.Add(new XAttribute("testcasecount", TestCount));
+            test.Add(new XAttribute("result", Result));
             test.Add(new XAttribute("total", TestCount));
             test.Add(new XAttribute("passed", PassCount));
             test.Add(new XAttribute("failed", FailedCount));
             test.Add(new XAttribute("inconclusive", InconclusiveCount));
             test.Add(new XAttribute("skipped", TotalSkipCount));
             test.Add(new XAttribute("asserts", AssertCount));
-
-            //Occurs when summarizing explore only
-            if (Result != null)
-                test.Add(new XAttribute("result", Result));
 
             test.Add(new XAttribute("portable-engine-version", typeof(ResultSummary).GetTypeInfo().Assembly.GetName().Version.ToString()));
 
@@ -102,14 +99,8 @@ namespace NUnit.Engine
             test.Add(new XAttribute("duration", Duration.ToString("0.000000", NumberFormatInfo.InvariantInfo)));
 
             foreach (var result in _results)
-            {
-                XElement firstSuite = result.Name.LocalName == "test-run"
-                    ? result.Element(XName.Get("test-suite"))
-                    : result;
-
-                if (firstSuite != null) test.Add(firstSuite);
-            }
-
+                test.Add(result);
+            
             return new XDocument(test);
         }
 
