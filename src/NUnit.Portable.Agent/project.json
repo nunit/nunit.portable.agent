@@ -10,7 +10,7 @@
     "summary": "The NUnit Portable Agent allows test runners to run portable NUnit tests without relying on the NUnit.Engine",
     "requireLicenseAcceptance": false,
     "tags": [ "testing", "tdd", "dnx", "nunit" ],
-    "iconUrl": "https://raw.githubusercontent.com/nunit/dotnet-test-nunit/master/nunit_256.png",
+    "iconUrl": "https://cdn.rawgit.com/nunit/resources/master/images/icon/nunit_256.png",
     "licenseUrl": "https://raw.githubusercontent.com/nunit/nunit.portable.agent/master/LICENSE",
     "repository": {
       "type": "git",
