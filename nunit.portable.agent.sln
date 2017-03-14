@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{49D441DF-39FD-4F4D-AECA-86CF8EFE23AF}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,7 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		appveyor.yml = appveyor.yml
 		CHANGES.txt = CHANGES.txt
 		CONTRIBUTING.md = CONTRIBUTING.md
-		global.json = global.json
 		LICENSE.txt = LICENSE.txt
 		NOTICES.txt = NOTICES.txt
 		nunit.ico = nunit.ico
@@ -23,11 +22,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5D2AF6F5-BC1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CC0C8BE9-2524-4153-98DD-519F323B8B1A}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NUnit.Portable.Agent", "src\NUnit.Portable.Agent\NUnit.Portable.Agent.xproj", "{D1567C63-4A0D-4E18-A14E-79699B9BFFFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnit.Portable.Agent", "src\NUnit.Portable.Agent\NUnit.Portable.Agent.csproj", "{D1567C63-4A0D-4E18-A14E-79699B9BFFFF}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "mock-assembly", "test\mock-assembly\mock-assembly.xproj", "{8C53C716-3E54-4DFE-8CD9-F4099042FCFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mock-assembly", "test\mock-assembly\mock-assembly.csproj", "{8C53C716-3E54-4DFE-8CD9-F4099042FCFA}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NUnit.Portable.Agent.Tests", "test\NUnit.Portable.Agent.Tests\NUnit.Portable.Agent.Tests.xproj", "{8CDC481D-DB17-4145-9963-9E895C29CBC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnit.Portable.Agent.Tests", "test\NUnit.Portable.Agent.Tests\NUnit.Portable.Agent.Tests.csproj", "{8CDC481D-DB17-4145-9963-9E895C29CBC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
